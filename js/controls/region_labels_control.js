@@ -26,14 +26,11 @@ var RegionLabelsCanvas = CanvasLayer.extend({
 
         for (var x = MIN_X; x < MAX_X; x += REGION_WIDTH) {
             for (var y = MIN_Y; y < MAX_Y; y += REGION_HEIGHT) {
-                var position = new Position(x + (REGION_WIDTH / 2), y + (REGION_HEIGHT / 2), 0);
+                var position = new Position(x + (REGION_WIDTH / 2), y + (REGION_HEIGHT / 2));
                 var latLng = position.toCentreLatLng(this._map);
-
-                var region = Region.fromPosition(position);
-
                 var canvasPoint = info.layer._map.latLngToContainerPoint(latLng);
 
-                ctx.fillText(region.id.toString(), canvasPoint.x, canvasPoint.y);
+                ctx.fillText(x/64+" "+y/64, canvasPoint.x, canvasPoint.y);
             }
         }
     }

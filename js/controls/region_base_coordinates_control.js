@@ -44,7 +44,7 @@ export var RegionBaseCoordinatesControl = L.Control.extend({
         var mousePos = Position.fromLatLng(this._map, e.latlng, this._map.plane);
         var regionPos = Region.fromPosition(mousePos).toPosition();
 
-        this._xCoordInput.value = regionPos.x;
-        this._yCoordInput.value = regionPos.y;
+        this._xCoordInput.value = regionPos.x/64;
+        this._yCoordInput.value = regionPos.y/64;
     }
 });
