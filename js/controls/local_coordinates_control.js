@@ -47,7 +47,7 @@ export var LocalCoordinatesControl = L.Control.extend({
         var localX = mousePos.x - regionPos.x;
         var localY = mousePos.y - regionPos.y;
 
-        this._xCoordInput.value = localX;
-        this._yCoordInput.value = localY;
+        this._xCoordInput.value = localX>>3;
+        this._yCoordInput.value = localY>>3;
     }
 });
